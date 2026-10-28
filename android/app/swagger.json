@@ -1,0 +1,649 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "BPHTB_ServiceAPI_Kab_Deli_Serdang",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://api-splp.layanan.go.id/api-bphtb-kabupaten-deli-serdang/1.0"
+  } ],
+  "security" : [ {
+    "default" : [ ]
+  } ],
+  "paths" : {
+    "/getBPHTBService" : {
+      "post" : {
+        "parameters" : [ ],
+        "requestBody" : {
+          "description" : "",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "NOP" : {
+                    "type" : "string"
+                  },
+                  "NTPD" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "data" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ALAMAT" : {
+                          "type" : "string"
+                        },
+                        "JENISBAYAR" : {
+                          "type" : "string"
+                        },
+                        "KECAMATAN_OP" : {
+                          "type" : "string"
+                        },
+                        "KELURAHAN_OP" : {
+                          "type" : "string"
+                        },
+                        "KOTA_OP" : {
+                          "type" : "string"
+                        },
+                        "LUASBANGUNAN" : {
+                          "type" : "number"
+                        },
+                        "LUASTANAH" : {
+                          "type" : "number"
+                        },
+                        "NAMA" : {
+                          "type" : "string"
+                        },
+                        "NIK" : {
+                          "type" : "string"
+                        },
+                        "NOP" : {
+                          "type" : "string"
+                        },
+                        "NTPD" : {
+                          "type" : "string"
+                        },
+                        "PEMBAYARAN" : {
+                          "type" : "number"
+                        },
+                        "STATUS" : {
+                          "type" : "string"
+                        },
+                        "TANGGAL_PEMBAYARAN" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Any other response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "default" : [ ]
+        } ],
+        "x-auth-type" : "Application & Application User",
+        "x-throttling-tier" : "Unlimited"
+      }
+    },
+    "/getStatusNIBService" : {
+      "post" : {
+        "parameters" : [ ],
+        "requestBody" : {
+          "description" : "",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "required" : [ "NIB" ],
+                "type" : "object",
+                "properties" : {
+                  "NIB" : {
+                    "type" : "string"
+                  }
+                }
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "data" : {
+                      "type" : "object",
+                      "properties" : {
+                        "ALAMAT" : {
+                          "type" : "string"
+                        },
+                        "JENISBAYAR" : {
+                          "type" : "string"
+                        },
+                        "KECAMATAN_OP" : {
+                          "type" : "string"
+                        },
+                        "KELURAHAN_OP" : {
+                          "type" : "string"
+                        },
+                        "KOTA_OP" : {
+                          "type" : "string"
+                        },
+                        "LUASBANGUNAN" : {
+                          "type" : "number"
+                        },
+                        "LUASTANAH" : {
+                          "type" : "number"
+                        },
+                        "NAMA" : {
+                          "type" : "string"
+                        },
+                        "NIK" : {
+                          "type" : "string"
+                        },
+                        "NOP" : {
+                          "type" : "string"
+                        },
+                        "NTPD" : {
+                          "type" : "string"
+                        },
+                        "PEMBAYARAN" : {
+                          "type" : "number"
+                        },
+                        "STATUS" : {
+                          "type" : "string"
+                        },
+                        "TANGGAL_PEMBAYARAN" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Any other response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "string"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "default" : [ ]
+        } ],
+        "x-auth-type" : "Application & Application User",
+        "x-throttling-tier" : "Unlimited"
+      }
+    },
+    "/getPBB" : {
+      "get" : {
+        "parameters" : [ {
+          "name" : "nop",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "jumlah_tahun_tunggakan" : {
+                      "type" : "integer",
+                      "example" : 0
+                    },
+                    "njop_bng_per_m2" : {
+                      "type" : "integer",
+                      "example" : 2500000
+                    },
+                    "njop_bumi_per_m2" : {
+                      "type" : "integer",
+                      "example" : 850000
+                    },
+                    "nop" : {
+                      "type" : "string",
+                      "example" : "12.10.020.019.002.0753.0"
+                    },
+                    "status_tunggakan" : {
+                      "type" : "string",
+                      "example" : "AMAN"
+                    },
+                    "total_luas_bng" : {
+                      "type" : "integer",
+                      "example" : 80
+                    },
+                    "total_luas_bumi" : {
+                      "type" : "integer",
+                      "example" : 120
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    },
+                    "description" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Any other response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "default" : [ ]
+        } ],
+        "x-auth-type" : "Application & Application User",
+        "x-throttling-tier" : "Unlimited"
+      }
+    }
+  },
+  "components" : {
+    "securitySchemes" : {
+      "default" : {
+        "type" : "oauth2",
+        "flows" : {
+          "implicit" : {
+            "authorizationUrl" : "https://api-splp.layanan.go.id/authorize",
+            "scopes" : { }
+          }
+        }
+      }
+    }
+  },
+  "x-wso2-api-key-header" : "ApiKey"
+}
